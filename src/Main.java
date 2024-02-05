@@ -15,36 +15,18 @@ public class Main {
             System.out.println(menu);
             int selection = menuChoice.nextInt();
             menuChoice.nextLine();
-
-            if(selection == 0) {
-                addTask(tasks);
-            }
-            if(selection == 1) {
-                removeTask(tasks);
-            }
-            if(selection == 2) {
-                updateTask(tasks);
-            }
-            if(selection == 3) {
-                listTask(tasks);
-            }
-            if(selection == 4) {
-                break;
-            }
-            else if(selection < 0 || selection > 4) {
-                System.out.println("Invalid input.");
-            }
+            if(selection == 0) addTask(tasks);
+            if(selection == 1) removeTask(tasks);
+            if(selection == 2) updateTask(tasks);
+            if(selection == 3) listTask(tasks);
+            if(selection == 4) break;
+            else if(selection < 0 || selection > 4) System.out.println("Invalid input.");
         }
     }
 
     private static void listTask(ArrayList<String> tasks) {
-        if(tasks.size() > 0) {
-            System.out.println(tasks);
-
-        }
-        else {
-            System.out.println("No tasks.");
-        }
+        if(tasks.size() > 0) System.out.println(tasks);
+        else System.out.println("No tasks.");
     }
 
     private static void updateTask(ArrayList<String> tasks) {
